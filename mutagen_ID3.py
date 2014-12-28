@@ -10,6 +10,8 @@
 # python_version  :3.4
 # ==============================================================================
 
+# Uses ID3 standards
+
 from mutagen.id3 import ID3
 
 # Print metadata in human-readable form.
