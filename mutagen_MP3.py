@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # project         :mutagen-tutorial
 # title           :mutagen_MP3.py
-# description     :Examples using Mutagen's MP3 library.
+# description     :Examples using Mutagen's MP3 tagging library.
 # author          :ravila
 # date            :December 28, 2014
 # version         :
