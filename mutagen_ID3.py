@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # project         :mutagen-tutorial
 # title           :mutagen_ID3.py
-# description     :Examples for using the mutagen API.
+# description     :Examples using Mutagen's ID3 library.
 # author          :ravila
 # date            :December 28, 2014
 # version         :
