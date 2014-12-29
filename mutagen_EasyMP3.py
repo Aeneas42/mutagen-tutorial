@@ -1,40 +1,38 @@
 #!/usr/bin/python3
 # project         :mutagen-tutorial
 # title           :mutagen_EasyMP3.py
-# description     :Examples for using the mutagen API
+# description     :Examples using Mutagen's EasyMP3 tagging library.
 # author          :ravila
 # date            :December 28, 2014
 # version         :
 # usage           :
-# notes           :
+# notes           :EasyID3 is a wrapper around mutagen.id3.ID3 to make ID3 tags appear more like Vorbis or APEv2 tags.
 # python_version  :3.4
 # ==============================================================================
 
 from mutagen.easyid3 import EasyID3
 
 # EasyID3 uses strings to describe the tags.
+# Note, not all ID3 standard tags are supported.
 
 audio = EasyID3("example.mp3")
-print(audio.pprint()) #  Print all tags in human readable form.
+print("----------------------------------")
+print("Example Song Metadata:")
+print("----------------------------------")
+print(audio.pprint())  # Print all available tags in human readable form.
 
+# Creating a custom tag using a TXXX Key
+print("----------------------------------")
+print("Valid tags:")
+audio.RegisterTXXXKey('valence', 'VALENCE')
+print(EasyID3.valid_keys.keys())
+print("----------------------------------")
 
-# ==============================================================================
-# SAMPLE OUTPUT:
-#
-# album=Aerosmith's Greatest Hits
-# artist=Aerosmith
-# bpm=82
-# date=1993
-# genre=Rock
-# language=English
-# musicbrainz_albumartistid=3d2b98e5-556f-4451-a3ff-c50ea18d57cb
-# musicbrainz_albumstatus=bootleg
-# musicbrainz_albumtype=album/compilation
-# musicbrainz_artistid=3d2b98e5-556f-4451-a3ff-c50ea18d57cb
-# musicbrainz_releasegroupid=e2255b98-9ccb-3991-821e-2a3ac6cb44d9
-# organization=Sony
-# performer=Aerosmith
-# title=Last Child
-# tracknumber=05 '''
-#
+# Assigning tag values
+audio["title"] = u"Last Child"
+audio.save()
+print(audio["title"])
 
+audio["valence"] = u"3.4"
+audio.save()
+print(audio["valence"])
