@@ -29,10 +29,10 @@ print(EasyID3.valid_keys.keys())
 print("----------------------------------")
 
 # Assigning tag values
-audio["title"] = u"Last Child"
+audio["title"] = "Last Child"
 audio.save()
 print(audio["title"])
 
-audio["valence"] = u"3.4"
+audio["valence"] = "3.4"
 audio.save()
 print(audio["valence"])
